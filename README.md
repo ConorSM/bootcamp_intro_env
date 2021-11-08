@@ -23,7 +23,7 @@
 
 ### Development Environment
 ![](images/dev-env.png)
-- **DevOps Introduction**
+**DevOps Introduction**
 - DevOps is a culture that bridges gap between Development and Operation
 - Shared development environment to reduce errors
 - continuous integration / continuous delivery more efficient
@@ -57,7 +57,6 @@ end
 # Update and upgrade packages
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get install -y
 
 # Install nginx
 sudo apt-get install nginx -y
