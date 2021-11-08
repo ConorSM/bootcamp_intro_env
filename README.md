@@ -61,7 +61,8 @@ sudo apt-get install -y
 # Install nginx
 sudo apt-get install nginx -y
 ```
-## add to end of Vagrantfile to automatically run the script on Vagrant up
+## Provisioning
+- Add to end of vagrant file to run script as part of the vagrant up process
 ```
 config.vm.provision "shell", path: "app/provision.sh"
 ```
