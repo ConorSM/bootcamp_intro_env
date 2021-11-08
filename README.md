@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-## Script to install nginx
+## Create `provison.sh` in `app` directory
 ```
 #!/bin/bash
 
@@ -59,6 +59,9 @@ sudo apt-get upgrade -y
 # Install nginx
 sudo apt-get install nginx -y
 ```
+**Change Permissions to allow execution of script**
+- sudo chmod +x provision.sh
+
 ## Provisioning
 - Add to end of vagrant file to run script as part of the vagrant up process
 ```
