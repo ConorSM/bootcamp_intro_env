@@ -21,7 +21,7 @@
 
 
 ### Development Environment
-
+![](images/dev-env.png)
 - **DevOps Introduction**
 - DevOps is a culture that bridges gap between Development and Operation
 -
