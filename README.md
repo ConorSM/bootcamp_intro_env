@@ -21,7 +21,10 @@
 - Waterfall - V-Model
 - Transition to Agile and SCRUM
 
-- Create `vagrantfile` in the current location
+# Vagrant
+- Automate the setup of virtual development environments
+
+## Create `vagrantfile` in the current location
 ```
 Vagrant.configure("2") do |config|
 
@@ -38,15 +41,23 @@ Vagrant.configure("2") do |config|
 end
 ```
 
+## Script to install nginx
 ```
 #!/bin/bash
+
+# Update and upgrade packages
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install -y
+
+# Install nginx
 sudo apt-get install nginx -y
 ```
-
-- Vagrant commands:
+## add to end of Vagrantfile to automatically run the script on Vagrant up
+```
+config.vm.provision "shell", path: "app/provision.sh"
+```
+## Vagrant commands:
 ```
 Common commands:
      autocomplete    manages autocomplete installation on host
