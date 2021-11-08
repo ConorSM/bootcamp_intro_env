@@ -2,6 +2,11 @@
 ## Life before DevOps
 ### Why DevOps
 #### Key pillars of DevOps
+- Ease of use
+- Flexibility
+- Robustness
+- Cost
+
 ##### Monolith Architecture
 
 - **DevOps Introduction**
