@@ -73,7 +73,7 @@ config.vm.provision "shell", path: "app/provision.sh"
 ```
 vagrant ssh
 ```
-# Check status of nginx
+### Check status of nginx
 ```
 sudo systemctl status nginx
 sudo systemctl start nginx
