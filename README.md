@@ -60,7 +60,9 @@ sudo apt-get upgrade -y
 sudo apt-get install nginx -y
 ```
 **Change Permissions to allow execution of script**
-- sudo chmod +x provision.sh
+```
+sudo chmod +x provision.sh
+```
 
 ## Provisioning
 - Add to end of vagrant file to run script as part of the vagrant up process
