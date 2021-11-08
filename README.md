@@ -12,7 +12,7 @@
 - Cost
 
 ##### Monolith Architecture
-- Presentation, presentation, and data composed all in one piece
+- Presentation, application, and data composed all in one piece
 - If there is a problem it all goes down
 - Can be useful for small applications
 - Not good for Large Applications
