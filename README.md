@@ -1,9 +1,10 @@
 # DevOps Intro
 ## Life before DevOps
 - Devleopers and Operations Working separately 
-- Waterfall - V-Model
+- Waterfall Model
+- Spend a long time developing only for bugs to arise during production
 - Transition to Agile and SCRUM
-- spend a long time developing only for bugs to arise during production
+
 ### Why DevOps
 - Communication between development and operations team
 - Iterative cycles so bugs can be found and fixed as they arise
@@ -24,8 +25,8 @@
 ![](images/dev-env.png)
 - **DevOps Introduction**
 - DevOps is a culture that bridges gap between Development and Operation
--
--
+- Shared development environment to reduce errors
+- continuous integration / continuous delivery more efficient
 - **Life before DevOps**
 
 
