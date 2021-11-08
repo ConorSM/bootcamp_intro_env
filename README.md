@@ -27,8 +27,6 @@
 - DevOps is a culture that bridges gap between Development and Operation
 - Shared development environment to reduce errors
 - continuous integration / continuous delivery more efficient
-- **Life before DevOps**
-
 
 # Vagrant
 - Automate the setup of virtual development environments
