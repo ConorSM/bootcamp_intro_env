@@ -67,6 +67,17 @@ sudo apt-get install nginx -y
 ```
 config.vm.provision "shell", path: "app/provision.sh"
 ```
+## How to SSH into VM
+```
+vagrant ssh
+```
+# Check status of nginx
+```
+sudo systemctl status nginx
+sudo systemctl start nginx
+sudo systemctl stop nginx
+```
+
 ## Vagrant commands:
 ```
 Common commands:
