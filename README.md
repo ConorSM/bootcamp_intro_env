@@ -31,7 +31,7 @@
 # Vagrant
 - Automate the setup of virtual development environments
 
-## Create `vagrantfile` in the current location
+## Create `Vagrantfile` in the current location
 ```
 Vagrant.configure("2") do |config|
 
