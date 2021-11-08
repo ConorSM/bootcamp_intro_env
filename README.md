@@ -1,6 +1,10 @@
 # DevOps Intro
 ## Life before DevOps
+- Devleopers and Operations Working separately 
+- spend a long time developing only for bugs to arise during production
 ### Why DevOps
+- Communication between development and operations team
+- Iterative cycles so bugs can be found and fixed as they arise
 #### Key pillars of DevOps
 - Ease of use
 - Flexibility
@@ -8,7 +12,10 @@
 - Cost
 
 ##### Monolith Architecture
-
+- Presentation, presentation, and data composed all in one piece
+- If there is a problem it all goes down
+- Can be useful for small applications
+- Not good for Large Applications
 
 
 ### Development Environment
