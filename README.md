@@ -1,6 +1,8 @@
 # DevOps Intro
 ## Life before DevOps
 - Devleopers and Operations Working separately 
+- Waterfall - V-Model
+- Transition to Agile and SCRUM
 - spend a long time developing only for bugs to arise during production
 ### Why DevOps
 - Communication between development and operations team
@@ -25,8 +27,7 @@
 -
 -
 - **Life before DevOps**
-- Waterfall - V-Model
-- Transition to Agile and SCRUM
+
 
 # Vagrant
 - Automate the setup of virtual development environments
