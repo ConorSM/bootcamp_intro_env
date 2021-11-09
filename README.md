@@ -126,6 +126,7 @@ Common commands:
 
 # Testing Development Environment
 
+### in `~/devops_bootcamp_nov_21/starter-code/environment/spec-tests` directory
 ```
 gem install bundler
 bundler
@@ -158,3 +159,27 @@ config.vm.provision "shell", path: "../app/provision.sh"
 rake spec
 ```
 
+# Linux commands
+- Who am I `uname` or `uname -a`
+- Where am I `pwd` will display current location
+- How can I list contents including hidden files `ls -a`
+- Delete file `rm filename` or `rm -rf filename`
+- Create a file `touch filename` or `nano filename`
+- Create a dir `mkdir dir-name`
+- Navigate inside dir `cd name_dir`
+- List all processes running `ps aux` or `top`
+- How to kill a process `kill process id/s`
+- Wildcard is used to deal with multiple files with same extension `*`
+- File permissions `+x executable`
+- `read (r) write (w)`
+- Check permissions `ll`
+- Change permission `chmod permission_reqired filename`
+- Copy file or folder `cp file newfile` `cp source dest`
+- Cut paste - move file or folder `mv`
+- How to use piping | `ls | head -2`
+
+-**Variable and Environment Variable**
+- How to check env var? `env`
+- Creating env var `export key=value` `export name=conor`
+- `printenv name`
+- Make env var persistent - command in `.profile` file
