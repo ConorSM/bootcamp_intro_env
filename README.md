@@ -24,6 +24,14 @@
 
 ### Development Environment
 ![](images/dev-env.png)
+
+**Development Environment Considerations**
+- What are you planning to develop?
+- Standardized
+- Robust
+- Automate tasks
+- Portable - VM - Container Docker
+
 **DevOps Introduction**
 - DevOps is a culture that bridges gap between Development and Operation
 - Shared development environment to reduce errors
