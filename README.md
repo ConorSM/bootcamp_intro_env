@@ -8,6 +8,7 @@
 ### Why DevOps
 - Communication between development and operations team
 - Iterative cycles so bugs can be found and fixed as they arise
+- Reduce time between committing a change and the change being placed in production
 #### Key pillars of DevOps
 - Ease of use
 - Flexibility
