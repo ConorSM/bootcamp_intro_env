@@ -126,5 +126,30 @@ Common commands:
 
 # Testing Development Environment
 
+## `provision.sh`
+```
+#!/bin/bash
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install nginx -y
+sudo apt-get install python-software-properties
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install nodejs -y
+sudo npm install pm2 -g
+cd app/app
+npm install
+npm start
+```
+## Provisioning
+- Add to end of vagrant file to run script as part of the vagrant up process
+```
+config.vm.provision "shell", path: "../app/provision.sh"
+```
+
+## Testing
+
+### in `~/devops_bootcamp_nov_21/starter-code/environment/spec-tests` directory
+```
+rake spec
 ```
 
