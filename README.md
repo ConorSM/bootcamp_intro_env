@@ -182,4 +182,4 @@ rake spec
 - How to check env var? `env`
 - Creating env var `export key=value` `export name=conor`
 - `printenv name`
-- Make env var persistent - command in `.profile` file have to exit an reconnect
+- Make env var persistent - command in `.profile` file - have to exit and reconnect
