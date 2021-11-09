@@ -126,6 +126,11 @@ Common commands:
 
 # Testing Development Environment
 
+```
+gem install bundler
+bundler
+```
+
 ## `provision.sh`
 ```
 #!/bin/bash
