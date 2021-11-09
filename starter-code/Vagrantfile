@@ -1,12 +1,22 @@
 Vagrant.configure("2") do |config|
+  
+  config.vm.define "app" do |app|
+    app.vm.box = "ubuntu/xenial64"
+    app.vm.network "private_network", ip: "192.168.10.100"
+    app.hostsupdater.aliases = ["development.local"]
+    app.vm.provision "shell", path: "environment/provision.sh"
+  end
 
-  config.vm.box = "ubuntu/xenial64"
-  config.vm.network "private_network", ip: "192.168.10.100"
-  config.hostsupdater.aliases = ["development.local"]
-
+  config.vm.define "db" do |db|
+    db.vm.box = "ubuntu/xenial64"
+    db.vm.network "private_network", ip: "192.168.10.150"
+    db.vm.provision "shell", path: "environment/db/provision.sh"
+  end 
+  
   # Sync folder from OS to VM
                 # "." means current location - into/inside our VM -
   config.vm.synced_folder ".", "/home/vagrant/app"
 
-  config.vm.provision "shell", path: "../app/provision.sh"
+  
+  
 end
