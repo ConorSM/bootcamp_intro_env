@@ -56,6 +56,10 @@ Vagrant.configure("2") do |config|
 
 end
 ```
+To sync app folder onto machine
+```
+config.vm.synced_folder ".","/home/vagrant/app"
+```
 
 ## Create `provison.sh` in `app` directory
 ```
@@ -125,38 +129,91 @@ Common commands:
 ```
 
 # Testing Development Environment
+- **Tests written in Ruby**
 
-### in `~/devops_bootcamp_nov_21/starter-code/environment/spec-tests` directory
+## **Testing**
+
+In `starter-code/environment/spec-tests` directory
+
+Requirements
 ```
 gem install bundler
 bundler
 ```
+To run test
+```
+rake spec
+```
+## Multi-Machine Vagrantfile
+```
+Vagrant.configure("2") do |config|
+  
+  config.vm.define "app" do |app|
+    app.vm.box = "ubuntu/xenial64"
+    app.vm.network "private_network", ip: "192.168.10.100"
+    app.hostsupdater.aliases = ["development.local"]
+    app.vm.provision "shell", path: "environment/provision.sh"
+  end
 
-## `provision.sh`
+  config.vm.define "db" do |db|
+    db.vm.box = "ubuntu/xenial64"
+    db.vm.network "private_network", ip: "192.168.10.150"
+    db.vm.provision "shell", path: "environment/db/provision.sh"
+  end 
+  
+  # Sync folder from OS to VM
+                # "." means current location - into/inside our VM -
+  config.vm.synced_folder ".", "/home/vagrant/app"
+
+end
+```
+
+## App `provision.sh`
 ```
 #!/bin/bash
+
+# Update the sources list
+sudo apt-get update -y
+
+# upgrade any packages available
+sudo apt-get upgrade -y
+
+# install nginx
+sudo apt-get install nginx -y
+
+# install git
+sudo apt-get install git -y
+
+# install nodejs
+sudo apt-get install python-software-properties
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install nodejs -y
+
+# install pm2
+sudo npm install pm2 -g
+```
+
+## DB `provision.sh`
+```
+# be careful of these keys, they will go out of date
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927
+echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get install nginx -y
-sudo apt-get install python-software-properties
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install nodejs -y
-sudo npm install pm2 -g
-cd app/app
-npm install
-npm start
+
+# sudo apt-get install mongodb-org=3.2.20 -y
+sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
+
+
+# if mongo is is set up correctly these will be successful
+sudo systemctl restart mongod
+sudo systemctl enable mongod
 ```
 ## Provisioning
 - Add to end of vagrant file to run script as part of the vagrant up process
 ```
 config.vm.provision "shell", path: "../app/provision.sh"
-```
-
-## Testing
-
-### in `~/devops_bootcamp_nov_21/starter-code/environment/spec-tests` directory
-```
-rake spec
 ```
 
 # Linux commands
