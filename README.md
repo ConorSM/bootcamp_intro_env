@@ -210,11 +210,6 @@ sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org
 sudo systemctl restart mongod
 sudo systemctl enable mongod
 ```
-## Provisioning
-- Add to end of vagrant file to run script as part of the vagrant up process
-```
-config.vm.provision "shell", path: "../app/provision.sh"
-```
 
 # Linux commands
 - Who am I `uname` or `uname -a`
