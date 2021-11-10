@@ -133,7 +133,7 @@ Common commands:
 
 ## **Testing**
 
-In `starter-code/environment/spec-tests` directory
+In `starter-code/environment/spec-tests`
 
 Requirements
 ```
@@ -213,17 +213,20 @@ sudo systemctl enable mongod
 ## Configuring machines
 
 ### DB
-
+In `/etc/mongod.conf`
+```
+Change bindIP to 0.0.0.0
+``` 
 ### App
-In `.bashrc` directory
+In `.bashrc`
 ```
 DB_HOST="mongodb://192.168.10.150:27017/posts"
 ```
-Then
+Then run command:
 ```
 node seeds/seed.js
 ```
-Finally to run npm in background
+Finally to run npm in background:
 ```
 (npm run start&)
 ```
