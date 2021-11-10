@@ -283,3 +283,33 @@ Paste this code into the server block where the location / { is:
         proxy_cache_bypass $http_upgrade;
     }
 ```
+# provision script for app and db
+- create a file for nginx.conf on localhost
+```
+   location / {
+     proxy_pass http://localhost:3000;
+     proxy_http_version 1.1;
+     proxy_set_header Upgrade $http_upgrade;
+     proxy_set_header Connection 'upgrade';
+     proxy_set_header Host $host;
+     proxy_cache_bypass $http_upgrade;
+    }
+```
+ 
+- create a file for mongod.conf
+```
+sudo nano /etc/mongod.conf
+Change bindIP to 0.0.0.0
+```
+ 
+- provision.sh for app
+- ```
+# set up an env var once the db is up
+# seeds db if needed
+- ```
+ 
+- provision.sh for db
+- set up an env var once the db is up
+- seeds db if needed
+- add dependencies in .gitignore
+- restart app and db once conf is changed
