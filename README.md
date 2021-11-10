@@ -254,3 +254,31 @@ Finally to run npm in background:
 - Creating env var `export key=value` `export name=conor`
 - `printenv name`
 - Make env var persistent - command in `.profile` or `.bashrc` file - have to exit and reconnect
+
+# Setting up Nginx on VM
+
+start the app machine and SSH connect:
+```
+vagrant up
+vagrant ssh app
+```
+
+go to `/sites-available` directory:
+```
+cd /etc/nginx/sites-available
+```
+open `default` file:
+```
+sudo nano default
+```
+Paste this code into the server block where the location / { is: 
+```
+    location / {
+        proxy_pass http://localhost:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+```
