@@ -144,7 +144,7 @@ To run test
 ```
 rake spec
 ```
-## Multi-Machine Vagrantfile
+## Multi-Machine `Vagrantfile`
 ```
 Vagrant.configure("2") do |config|
   
