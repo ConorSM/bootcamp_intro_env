@@ -219,9 +219,13 @@ In `.bashrc` directory
 ```
 DB_HOST="mongodb://192.168.10.150:27017/posts"
 ```
-finally
+Then
 ```
 node seeds/seed.js
+```
+Finally to run npm in background
+```
+(npm run start&)
 ```
 # Linux commands
 - Who am I `uname` or `uname -a`
