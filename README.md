@@ -215,6 +215,7 @@ sudo systemctl enable mongod
 ### DB
 In `/etc/mongod.conf`
 ```
+sudo nano /etc/mongod.conf
 Change bindIP to 0.0.0.0
 ``` 
 ### App
