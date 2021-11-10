@@ -215,7 +215,14 @@ sudo systemctl enable mongod
 ### DB
 
 ### App
-
+In `.bashrc` directory
+```
+DB_HOST="mongodb://192.168.10.150:27017/posts"
+```
+finally
+```
+node seeds/seed.js
+```
 # Linux commands
 - Who am I `uname` or `uname -a`
 - Where am I `pwd` will display current location
