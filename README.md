@@ -210,6 +210,11 @@ sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org
 sudo systemctl restart mongod
 sudo systemctl enable mongod
 ```
+## Configuring machines
+
+### DB
+
+### App
 
 # Linux commands
 - Who am I `uname` or `uname -a`
