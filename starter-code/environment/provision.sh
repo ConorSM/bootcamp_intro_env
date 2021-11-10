@@ -19,3 +19,22 @@ sudo apt-get install nodejs -y
 
 # install pm2
 sudo npm install pm2 -g
+
+# remove vm nginx config and replace with local config
+sudo rm -rf /etc/nginx/sites-available/default
+sudo cp app/app/default /etc/nginx/sites-available/
+
+#remove rm .bashrc and replace with local version
+sudo rm -rf .bashrc
+sudo cp app/app/.bashrc . 
+source ~/.bashrc
+
+# if nginx is is set up correctly these will be successful
+sudo systemctl restart nginx
+sudo systemctl enable nginx
+
+
+
+
+
+
