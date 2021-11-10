@@ -377,6 +377,27 @@ source ~/.bashrc
 sudo systemctl restart nginx
 sudo systemctl enable nginx
 ```
+- Vagrantfile
+```
+Vagrant.configure("2") do |config|
+  
+  config.vm.define "db" do |db|
+    db.vm.box = "ubuntu/xenial64"
+    db.vm.network "private_network", ip: "192.168.10.150"
+    db.vm.synced_folder ".", "/home/vagrant/app"
+    db.vm.provision "shell", path: "environment/db/provision.sh"
+  end 
+
+  config.vm.define "app" do |app|
+    app.vm.box = "ubuntu/xenial64"
+    app.vm.network "private_network", ip: "192.168.10.100"
+    app.vm.synced_folder ".", "/home/vagrant/app"
+    app.vm.provision "shell", path: "environment/provision.sh"
+  end
+  
+
+end
+```
 - set up an env var once the db is up
 - seeds db if needed
 - add dependencies in .gitignore
