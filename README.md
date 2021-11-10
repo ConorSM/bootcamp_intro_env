@@ -218,7 +218,7 @@ In `/etc/mongod.conf`
 Change bindIP to 0.0.0.0
 ``` 
 ### App
-In `.bashrc`
+In `.bashrc` add persistent env var
 ```
 DB_HOST="mongodb://192.168.10.150:27017/posts"
 ```
