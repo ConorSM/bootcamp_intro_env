@@ -14,7 +14,7 @@ sudo apt-get install git -y
 
 # install nodejs
 sudo apt-get install python-software-properties
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install nodejs -y
 
 # install pm2
@@ -25,8 +25,8 @@ sudo rm -rf /etc/nginx/sites-available/default
 sudo cp app/app/default /etc/nginx/sites-available/
 
 #remove rm .bashrc and replace with local version
-sudo rm -rf .bashrc
-sudo cp app/app/.bashrc . 
+sudo rm -rf /home/vagrant/.bashrc
+sudo cp /home/vagrant/app/app/.bashrc /home/vagrant/
 source ~/.bashrc
 
 # if nginx is is set up correctly these will be successful

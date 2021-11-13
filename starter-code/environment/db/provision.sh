@@ -10,7 +10,7 @@ sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org
 
 # remove vm mongod.conf and replace with local version
 sudo rm -rf /etc/mongod.conf
-sudo cp app/environment/db/mongod.conf /etc/
+sudo cp /home/vagrant/app/environment/db/mongod.conf /etc/
 
 # if mongo is is set up correctly these will be successful
 sudo systemctl restart mongod

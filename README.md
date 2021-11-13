@@ -272,28 +272,40 @@ open `default` file:
 ```
 sudo nano default
 ```
-Paste this code into the server block where the location / { is: 
+Replace with this code: 
 ```
+upstream nodejs {
+  server 192.168.10.100:3000;
+  }
+
+  server {
+    listen 80;
     location / {
-        proxy_pass http://localhost:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
+      proxy_pass http://localhost:3000;
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Host $host;
+      proxy_cache_bypass $http_upgrade;
     }
+  }
 ```
 # provision script for app and db
 - create a file for nginx.conf on localhost
 ```
-   location / {
-     proxy_pass http://localhost:3000;
-     proxy_http_version 1.1;
-     proxy_set_header Upgrade $http_upgrade;
-     proxy_set_header Connection 'upgrade';
-     proxy_set_header Host $host;
-     proxy_cache_bypass $http_upgrade;
+upstream nodejs {
+  server 192.168.10.100:3000;
+  }
+
+  server {
+    listen 80;
+    location / {
+      proxy_pass http://localhost:3000;
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Host $host;
+      proxy_cache_bypass $http_upgrade;
     }
+  }
 ```
  
 - create a file for mongod.conf
